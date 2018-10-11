@@ -1,15 +1,14 @@
-from flask import Flask
+from flask import Flask, request, Response, render_template
 from functools import wraps
-from flask import request, Response
+import os
 
-
-app = Flask(__name__)
+app = Flask(__name__, template_folder='static/html/')
 
 def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
-    return username == 'eborealis' and password == 'AlmondJoy'
+    return username == 'eborealis' and password == 'AlmondJoy'    
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
@@ -28,9 +27,9 @@ def requires_auth(f):
     return decorated
 
 @app.route('/')
-@requires_auth
+
 def index():
-    return "<h1>Hello, World!</h1>"
+    return render_template('sms.html')
 
 @app.route('/user/<name>')
 def user(name):
