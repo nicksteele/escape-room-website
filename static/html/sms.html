@@ -1,2 +1,24 @@
 <!doctype html>
-<h1>Please enter your SMS code</h1>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="generator" content="Bootstrap Listr">
+  <title>File System</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/listr.pack.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.filer.css')}}">
+</head>
+<body>
+    <div>
+        <h1>Please enter your Email code</h1>
+        <input id="second-factor-input" type="text">
+        <input id="submit-button" type="submit" value="Submit">
+        <div id="input-alert" style="color:red;display: none;">Wrong Code</div>
+    </div>
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/tether.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/listr.pack.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery.filer.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/sms.js')}}"></script>
+</body>
